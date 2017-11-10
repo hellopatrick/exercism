@@ -15,6 +15,7 @@ let fix_quotes word =
         word
 
 let counter map word =
+    let word = fix_quotes word in
     if word = "" then
         map
     else
@@ -28,5 +29,4 @@ let word_count sentence =
     sentence
     |> String.map ~f:normalize
     |> String.split ~on: ' '
-    |> List.map ~f:fix_quotes
     |> List.fold ~init:SM.empty ~f:counter

@@ -1,19 +1,27 @@
 open Core.Std
 
-module IM = Int64.Map
-
-let number_map = IM.of_alist_exn [
-    (0L, ""); (1L, "one"); (2L, "two"); (3L, "three");
-    (4L, "four"); (5L, "five"); (6L, "six"); (7L, "seven");
-    (8L, "eight"); (9L, "nine"); (10L, "ten"); (11L, "eleven");
-    (12L, "twelve"); (13L, "thirteen"); (14L, "fourteen"); (15L, "fifteen");
-    (16L, "sixteen"); (17L, "seventeen"); (18L, "eighteen"); (19L, "nineteen");
-    ]
-
-let number_to_word n =
-    match IM.find number_map n with
-    | None -> ""
-    | Some e -> e
+let number_to_word = function
+    | 0L -> ""
+    | 1L -> "one"
+    | 2L -> "two"
+    | 3L -> "three"
+    | 4L -> "four"
+    | 5L -> "five"
+    | 6L -> "six"
+    | 7L -> "seven"
+    | 8L -> "eight"
+    | 9L -> "nine"
+    | 10L -> "ten"
+    | 11L -> "eleven"
+    | 12L -> "twelve"
+    | 13L -> "thirteen"
+    | 14L -> "fourteen"
+    | 15L -> "fifteen"
+    | 16L -> "sixteen"
+    | 17L -> "seventeen"
+    | 18L -> "eighteen"
+    | 19L -> "nineteen"
+    | _ -> ""
 
 let tens_to_word = function
     | 2L -> "twenty"

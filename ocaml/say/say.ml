@@ -1,7 +1,6 @@
 open Core.Std
 
 let number_to_word = function
-    | 0L -> ""
     | 1L -> "one"
     | 2L -> "two"
     | 3L -> "three"
